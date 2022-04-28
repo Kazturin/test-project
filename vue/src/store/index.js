@@ -23,7 +23,6 @@ const store = createStore(
             login({commit},user){
                 return axiosClient.post('/login', user)
                 .then(({data})=>{
-                  console.log(data);
                     commit('setUser',data);
                     return data;
                 })
@@ -70,21 +69,17 @@ const store = createStore(
           sessionStorage.removeItem('TOKEN');
         },
         setUser: (state, userData) => {
-
-          console.log('set user mutation');
           state.user.token = userData.token;
           state.user.data = userData.user;
           if (userData.contacts){
             state.user.contacts = userData.contacts;
           }
-          console.log(state.user);
           sessionStorage.setItem('TOKEN', userData.token)
         },
         setUsers: (state, data) => {
           state.users = data;
         },
         pushContact: (state, data) => {
-          console.log(state.user)
           if (state.user.contacts){
             state.user.contacts.push(data)
           }

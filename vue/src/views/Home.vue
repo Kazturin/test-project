@@ -65,7 +65,6 @@ export default {
         user_id: this.user.id,
         contact_id: id,
       }
-      console.log(data);
       store.dispatch('subscribe',data);
     }
     function unsubscribe(id){
