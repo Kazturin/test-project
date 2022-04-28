@@ -4,13 +4,13 @@
 <table>
     <tr>
         <td>
-            <a href="https://laravel.com"></a>
+            <a href="https://laravel.com">laravel</a>
         </td>
         <td>
-            <a href="https://vuejs.org/"></a>
+            <a href="https://vuejs.org/">vuejs</a>
         </td>
         <td>
-            <a href="https://tailwindcss.com/"></a>
+            <a href="https://tailwindcss.com/">tailwindcss</a>
         </td>
     </tr>
 </table>
