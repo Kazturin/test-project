@@ -19,17 +19,20 @@
 ## Установка
 
 #### Backend
-1. Clone the project
-2. Go to the project root directory
-3. Run `composer install`
-4. Create database
-5. Copy `.env.example` into `.env` file and adjust parameters
-6. Run `php artisan serve` to start the project at http://localhost:8000
+1. Клонировать проект
+2. Перейдите в корневой каталог проекта
+3. Установить зависимости Run `composer install`
+4. Создать БД
+5. Скопируйте `.env.example` в файл `.env` и настройте параметры
+6. Миграция БД
+    - php artisan migrate;
+    - php artisan db:seed
+7. Запустите `php artisan serve`, чтобы запустить проект по адресу http://localhost:8000
 
 #### Frontend
-1. Navigate to `vue` folder using terminal
-2. Run `npm install` to install vue.js project dependencies
-3. Copy `vue/.env.example` into `vue/.env` and specify API URL
-4. Start frontend by running `npm run dev`
-5. Open http://localhost:3000
+1. Перейдите в папку `vue` с помощью терминала
+2. Запустите `npm install`, чтобы установить зависимости проекта vue.js
+3. Скопируйте `vue/.env.example` в `vue/.env` и укажите URL API
+4. Запустите frontend, запустив `npm run dev`
+5. Открыть http://localhost:3000
 

@@ -18,5 +18,5 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::get('/test', function () {
-    return Auth::user();
+     dd(\App\Models\User::find(20)->contacts()->get());
 });

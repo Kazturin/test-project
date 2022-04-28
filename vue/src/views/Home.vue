@@ -6,13 +6,12 @@
         <path d="M20,19v1a1,1,0,0,1-1,1H5a1,1,0,0,1-1-1V19a6,6,0,0,1,6-6h4A6,6,0,0,1,20,19Z" fill="#464646"/>
       </svg>
       <span class="text-3xl">
-        {{user.name}}
       </span>
     </div>
     <hr>
     <div class="my-6">
       <h1 class="text-3xl">Пользователи</h1>
-      <div class="grid grid-cols-1 sm:grid-cols-3 xl:grid-cols-4 gap-3">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3">
         <div v-for="item in users" :key="item.id" class="max-w-sm p-6 border mt-5">
           <div class="flex items-center">
             <svg class="h-24 w-24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title/>
@@ -44,6 +43,7 @@
 import PageComponent from "../components/PageComponent.vue";
 import {useStore} from 'vuex';
 import {computed} from 'vue';
+
 export default {
   components: {
     PageComponent
@@ -64,6 +64,7 @@ export default {
         user_id: this.user.id,
         contact_id: id,
       }
+      console.log(data);
       store.dispatch('subscribe',data);
     }
     function unsubscribe(id){
@@ -74,11 +75,11 @@ export default {
       store.dispatch('unsubscribe',data);
     }
     function subscripted(id){
-  
-      var found = this.contacts.find(function (element) {
-        return element.id == id;
-    });
-    return found;
+      if (this.contacts){
+        return this.contacts.find(function (element) {
+          return element.id === id;
+        });
+      }
     }
 
     return {

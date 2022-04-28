@@ -86,8 +86,12 @@ function login(ev){
         .then(() => {
             router.push({name: 'Home'})
         }).catch(err => {
-          console.log(err);
-        errorMsg.value = err.response.data.error
+          if (err.response.data.error){
+            errorMsg.value = err.response.data.error
+          }else{
+            errorMsg.value = err.response.data.message
+          }
+
     })
 }
 </script>
